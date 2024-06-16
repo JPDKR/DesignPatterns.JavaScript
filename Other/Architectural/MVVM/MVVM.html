@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas con MVVM</title>
+  <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  <input type="text" data-bind="value: nuevaTarea, valueUpdate: 'input'">
+  <button data-bind="click: agregarTarea">Agregar Tarea</button>
+  <ul data-bind="foreach: tareas">
+    <li>
+      <span data-bind="text: $data"></span>
+      <button data-bind="click: $parent.eliminarTarea">Eliminar</button>
+    </li>
+  </ul>
+
+  <script src="mvvm.js"></script>
+</body>
+</html>
